@@ -13,22 +13,36 @@ const ProjectCarousel = () => {
       id: 1,
       title: "Projeto Residencial Moderno",
       description: "Design arquitetônico contemporâneo com integração total à natureza e soluções sustentáveis.",
-      image: "/images/projeto1.jpg",
+      image: "/images/casa1.jpg",
       category: "Residencial"
     },
     {
       id: 2,
       title: "Complexo Corporativo",
       description: "Edifício corporativo com tecnologia de ponta, espaços colaborativos e design inovador.",
-      image: "/images/projeto2.jpg",
+      image: "/images/casa2.jpg",
       category: "Corporativo"
     },
     {
       id: 3,
       title: "Centro Comercial & Lazer",
       description: "Complexo integrado com área comercial, entretenimento e praça de convivência urbana.",
-      image: "/images/projeto3.jpg",
+      image: "/images/casa3.jpg",
       category: "Comercial"
+    },
+    {
+      id: 4,
+      title: "Galpão de encomendas",
+      description: "Galpão com autonomia energética",
+      image:  "/images/casa4.jpg",
+      category: "Comercial"
+    },
+    {
+      id: 5,
+      title: "Casa residencial",
+      description: "Casa simples",
+      image:  "/images/casa5.jpg",
+      category: "Residencial"
     }
   ];
 

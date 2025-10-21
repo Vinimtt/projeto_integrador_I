@@ -33,7 +33,6 @@ img {
   height: auto;
 }
 
-/* Remove outline padrão dos botões */
 button:focus {
   outline: none;
 }
