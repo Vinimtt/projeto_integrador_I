@@ -2,8 +2,9 @@
 import React from 'react';
 import Head from 'next/head';
 import NavBar from '../components/NavBar';
-import ProjectCarousel from '../components/ProjectCarousel';
+import InicioSection from '../components/InicioSection';
 import QuemSomosSection from '../components/QuemSomosSection';
+import ProjectCarousel from '../components/ProjectCarousel';
 
 export default function Home() {
   return (
@@ -16,11 +17,13 @@ export default function Home() {
 
       <NavBar />
       <main>
+        
+        <InicioSection /> {}
 
         <QuemSomosSection/>
         
         <ProjectCarousel />
-        <p>Conteúdo adicional da página inicial pode ser adicionado aqui.</p>
+        <p></p>
         
       </main>
     </>

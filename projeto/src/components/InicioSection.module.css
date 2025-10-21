@@ -1,0 +1,79 @@
+/* components/InicioSection.module.css */
+.heroSection {
+  background: #fff;
+  padding: 5rem 2rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex; 
+}
+
+.heroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  gap: 3rem;
+  width: 100%;
+}
+
+.textWrapper {
+  flex: 1; 
+}
+
+.heroTitle {
+  font-size: 3.5rem; 
+  font-weight: 700;
+  color: #292727;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.heroTitle span {
+  font-weight: 600;
+  font-size: 3.2rem;
+  color: #444;
+}
+
+.imageWrapper {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  margin-top: 40px;
+  border-radius: 25px; 
+  width: 100%;
+  height: auto;
+  max-width: 550px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    flex-direction: column-reverse;
+    gap: 2rem;
+    padding-top: 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2.2rem; 
+    text-align: center; 
+  }
+
+  .heroTitle span {
+    font-size: 2rem;
+  }
+
+  .imageWrapper {
+    width: 100%;
+  }
+
+  .heroSection {
+    padding: 3rem 1.5rem;
+  }
+}
