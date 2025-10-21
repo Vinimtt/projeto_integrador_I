@@ -1,0 +1,106 @@
+/* components/ServicosSection.module.css */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-10px);
+}
+
+.serviceIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.serviceCard h3 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.serviceCard p {
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.serviceCard ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.serviceCard li {
+  padding: 0.5rem 0;
+  color: #666;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.serviceCard li:before {
+  content: "▶ ";
+  color: #4caf50;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+}

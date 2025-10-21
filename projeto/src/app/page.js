@@ -4,6 +4,7 @@ import Head from 'next/head';
 import NavBar from '../components/NavBar';
 import ProjectCarousel from '../components/ProjectCarousel';
 import QuemSomosSection from '../components/QuemSomosSection';
+import ServicosSection from '../components/ServicosSection';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
       <main>
 
         <QuemSomosSection/>
-        
+        <ServicosSection/>
         <ProjectCarousel />
         <p>Conteúdo adicional da página inicial pode ser adicionado aqui.</p>
         
