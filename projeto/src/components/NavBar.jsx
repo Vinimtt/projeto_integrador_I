@@ -13,8 +13,13 @@ const NavBar = () => {
           <Image 
             src="/images/logo.png"   
             alt="Logo da Empresa"    
+<<<<<<< HEAD
             width={70}          
             height={60} 
+=======
+            width={60}             
+            height={25} 
+>>>>>>> 0be06ad6520c042eac113d48c7e344d987f71fe1
             priority                 
           />
         </Link>
