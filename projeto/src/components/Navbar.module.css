@@ -1,91 +1,185 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-}
-
-
+/* Navbar.module.css */
 .navbar {
-  background-color: #111; 
-  padding: 1rem 0;
-  position: sticky;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 15px rgba(57, 255, 20, 0.2); 
+  padding: 0.8rem 0;
+  border-bottom: 3px solid #2e7d32;
 }
 
-
 .navbarContainer {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 2rem;
 }
 
-
-.navbarLogo {
-  color: #39ff14; 
-  font-size: 1.8rem;
-  font-weight: 700;
+.navbarBrand {
   text-decoration: none;
-  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;  
-  transition: text-shadow 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
 }
 
-.navbarLogo:hover {
-  text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14;
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
+.companyName {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.companyTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2e7d32;
+  letter-spacing: 0.5px;
+}
+
+.companySubtitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 1px;
+}
 
 .navbarMenu {
   display: flex;
-  list-style: none; 
+  list-style: none;
   margin: 0;
   padding: 0;
+  gap: 2.5rem;
 }
-
 
 .navbarItem {
-  margin-left: 2.5rem; 
+  position: relative;
 }
-
 
 .navbarLink {
-  color: #f4f4f4; 
   text-decoration: none;
+  color: #333;
+  font-weight: 600;
   font-size: 1rem;
+  transition: all 0.3s ease;
   padding: 0.5rem 0;
   position: relative;
-  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
 
 .navbarLink:hover {
-  color: #39ff14; 
-  text-shadow: 0 0 5px #39ff14;
+  color: #2e7d32;
 }
-
 
 .navbarLink::after {
   content: '';
   position: absolute;
-  width: 100%;
-  height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #39ff14;
-  transform: scaleX(0); 
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  transition: width 0.3s ease;
 }
 
 .navbarLink:hover::after {
-  transform: scaleX(1); 
-  transform-origin: bottom left;
+  width: 100%;
+}
+
+/* Menu Mobile */
+.mobileMenuButton {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  gap: 4px;
+}
+
+.mobileMenuButton span {
+  width: 25px;
+  height: 3px;
+  background: #2e7d32;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobileMenu.active {
+  display: flex;
+}
+
+.mobileLink {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.mobileLink:hover {
+  background: #f8f9fa;
+  color: #2e7d32;
+  padding-left: 2.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbarMenu {
+    display: none;
+  }
+  
+  .mobileMenuButton {
+    display: flex;
+  }
+  
+  .navbarContainer {
+    padding: 0 1rem;
+  }
+  
+  .companyTitle {
+    font-size: 1.2rem;
+  }
+  
+  .companySubtitle {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoContainer {
+    gap: 0.5rem;
+  }
+  
+  .companyTitle {
+    font-size: 1.1rem;
+  }
+  
+  .companySubtitle {
+    font-size: 0.7rem;
+  }
 }

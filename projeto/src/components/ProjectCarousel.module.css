@@ -1,0 +1,330 @@
+/* ProjectCarousel.module.css */
+.carouselSection {
+  padding: 0;
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.carouselTitle {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  z-index: 10;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #4caf50;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.carouselTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 1s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.carouselSlide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.projectCard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.projectImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  filter: brightness(0.7);
+  transition: transform 8s ease-out;
+}
+
+.carouselSlide.active .image {
+  transform: scale(1.05);
+}
+
+.projectOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+}
+
+.projectInfo {
+  max-width: 800px;
+  color: white;
+  text-align: left;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease 0.3s;
+}
+
+.carouselSlide.active .projectInfo {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.projectCategory {
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+}
+
+.projectTitle {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.projectDescription {
+  font-size: 1.4rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 600px;
+}
+
+.projectButton {
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 20px rgba(46, 125, 50, 0.4);
+}
+
+.projectButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.6);
+  background: linear-gradient(135deg, #1b5e20, #388e3c);
+}
+
+/* Navegação */
+.carouselNavigation {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+}
+
+.carouselButton {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+}
+
+.carouselIndicators {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+  z-index: 20;
+}
+
+.indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #4caf50;
+  border-color: #4caf50;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(76, 175, 80, 0.5);
+}
+
+/* Progress Bar */
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 20;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  width: 0%;
+  transition: width 5s linear;
+}
+
+.carouselSlide.active ~ .progressFill {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .projectTitle {
+    font-size: 3rem;
+  }
+  
+  .projectDescription {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselTitle {
+    font-size: 2.5rem;
+    top: 100px;
+  }
+  
+  .projectOverlay {
+    padding: 2rem;
+  }
+  
+  .projectTitle {
+    font-size: 2.5rem;
+  }
+  
+  .projectDescription {
+    font-size: 1.1rem;
+  }
+  
+  .projectButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .carouselNavigation {
+    bottom: 2rem;
+    right: 2rem;
+  }
+  
+  .carouselButton {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .carouselIndicators {
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectTitle {
+    font-size: 2rem;
+  }
+  
+  .projectDescription {
+    font-size: 1rem;
+  }
+  
+  .projectOverlay {
+    padding: 1.5rem;
+  }
+  
+  .carouselNavigation {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .carouselIndicators {
+    bottom: 1rem;
+  }
+  
+  .carouselButton {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+}

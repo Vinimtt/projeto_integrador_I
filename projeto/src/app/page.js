@@ -1,12 +1,25 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
-import ImageCarousel from '../components/ImageCarousel' 
+// pages/index.js
+import React from 'react';
+import Head from 'next/head';
+import NavBar from '../components/NavBar';
+import ProjectCarousel from '../components/ProjectCarousel';
 
 export default function Home() {
   return (
     <>
-      <NavBar/>
-      <ImageCarousel /> 
+      <Head>
+        <title>Empresa - Nossos Projetos</title>
+        <meta name="description" content="Conheça nossos projetos e serviços" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <NavBar />
+      <main>
+        
+        <ProjectCarousel />
+        <p>Conteúdo adicional da página inicial pode ser adicionado aqui.</p>
+        
+      </main>
     </>
   );
 }
