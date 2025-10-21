@@ -1,0 +1,103 @@
+/* components/QuemSomosSection.module.css */
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.bgLight {
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2e7d32, #4caf50);
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aboutText h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.aboutText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.missionVision {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mvItem {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.mvItem h4 {
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.mvItem ul {
+  list-style: none;
+  padding: 0;
+}
+
+.mvItem li {
+  padding: 0.3rem 0;
+  color: #666;
+}
+
+.mvItem li:before {
+  content: "✓ ";
+  color: #4caf50;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .missionVision {
+    grid-template-columns: 1fr;
+  }
+}
