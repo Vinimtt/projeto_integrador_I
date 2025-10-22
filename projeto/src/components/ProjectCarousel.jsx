@@ -113,10 +113,10 @@ const ProjectCarousel = () => {
           
           <div className={styles.carouselNavigation}>
             <button className={styles.carouselButton} onClick={prevSlide}>
-              ‹
+              <span className={styles.arrowIcon}>‹</span>
             </button>
             <button className={styles.carouselButton} onClick={nextSlide}>
-              ›
+              <span className={styles.arrowIcon}>›</span>
             </button>
           </div>
 
