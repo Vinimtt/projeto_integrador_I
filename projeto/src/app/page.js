@@ -6,26 +6,23 @@ import InicioSection from '../components/InicioSection';
 import QuemSomosSection from '../components/QuemSomosSection';
 import ServicosSection from '../components/ServicosSection';
 import ProjectCarousel from '../components/ProjectCarousel';
-
-
+import ContatoSection from '../components/ContatoSection';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Empresa - Nossos Projetos</title>
+        <title>ABengenharia - Nossos Projetos</title>
         <meta name="description" content="Conheça nossos projetos e serviços" />
       </Head>
 
       <NavBar />
       <main>
-        
-        <InicioSection /> {}
+        <InicioSection />
         <QuemSomosSection/>
         <ServicosSection/>
         <ProjectCarousel />
-        <p></p>
-        
+        <ContatoSection />
       </main>
     </>
   );
