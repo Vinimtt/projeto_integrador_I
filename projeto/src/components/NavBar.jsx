@@ -24,7 +24,7 @@ const NavBar = () => {
             />
             <div className={styles.companyName}>
               <span className={styles.companyTitle}>ENGENHARIA &</span>
-              <span className={styles.companySubtitle}>ARQUITETURA</span>
+              <span className={styles.companySubtitle}>ENERGIA</span>
             </div>
           </div>
         </Link>

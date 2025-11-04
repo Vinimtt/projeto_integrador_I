@@ -67,7 +67,7 @@ const ProjectCarousel = () => {
   }, [currentSlide]);
 
   return (
-    <section className={styles.carouselSection}>
+    <section id="projetos" className={styles.carouselSection}>
       <div className={styles.carouselContainer}>
         <h2 className={styles.carouselTitle}>NOSSOS PROJETOS</h2>
         
