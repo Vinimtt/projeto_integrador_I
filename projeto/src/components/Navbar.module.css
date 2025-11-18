@@ -65,6 +65,57 @@
   position: relative;
 }
 
+/* --- ESTILOS DO DROPDOWN (Novo) --- */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    display: none; /* Esconder por padrão */
+    position: absolute;
+    background-color: rgba(6,10,12,0.98);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+    z-index: 1001;
+    top: 100%; 
+    left: 0;
+    border-top: 3px solid var(--green-500);
+    border-radius: 0 0 8px 8px;
+    padding: 0.5rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar o dropdown no hover */
+.dropdown:hover .dropdownContent {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdownItem {
+    color: #e6f6ea;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+    white-space: nowrap; 
+}
+
+.dropdownItem:hover {
+    background: rgba(46,125,50,0.1);
+    color: var(--green-500);
+    padding-left: 1.2rem;
+}
+
+/* ------------------------------------- */
 
 .navbarLink {
   text-decoration: none;
@@ -175,6 +226,19 @@
   padding-left: 2.5rem;
 }
 
+/* Estilo para sub-links no menu mobile */
+.mobileSubLink {
+    font-size: 0.95rem;
+    font-weight: 400;
+    padding-left: 3rem; /* Indentação para sub-links */
+    text-transform: none;
+    border-top: none;
+    border-bottom: none;
+}
+.mobileSubLink:hover {
+    padding-left: 3.5rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .navbarMenu {
@@ -210,4 +274,19 @@
   .companySubtitle {
     font-size: 0.7rem;
   }
+}
+
+.navbarLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-700), var(--green-500));
+  transition: width 0.25s ease;
+}
+
+.navbarItem:hover .navbarLink::after { 
+    width: 100%;
 }

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Navbar.module.css';
+import { projects } from './ProjectCarousel'; // Importar a lista de projetos
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,9 +70,25 @@ const NavBar = () => {
           <li className={styles.navbarItem}>
             <Link href="#servicos" className={styles.navbarLink}>Serviços</Link>
           </li>
-          <li className={styles.navbarItem}>
+          
+          {/* Item de Projetos com Dropdown */}
+          <li className={`${styles.navbarItem} ${styles.dropdown}`}>
             <Link href="#projetos" className={styles.navbarLink}>Projetos</Link>
+            <div className={styles.dropdownContent}>
+              {projects.map((project, index) => (
+                <Link 
+                  key={project.id} 
+                  // CORREÇÃO AQUI: Formatando o href para /?slide=X#projetos
+                  href={`/?slide=${index}#projetos`} 
+                  className={styles.dropdownItem}
+                  onClick={() => setIsMenuOpen(false)} 
+                >
+                  {project.title}
+                </Link>
+              ))}
+            </div>
           </li>
+          
           <li className={styles.navbarItem}>
             <Link href="#contato" className={styles.navbarLink}>Contato</Link>
           </li>
@@ -102,7 +119,22 @@ const NavBar = () => {
           <Link href="#inicio" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)} ref={firstLinkRef}>Início</Link>
           <Link href="#quem-somos" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Quem Somos</Link>
           <Link href="#servicos" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Serviços</Link>
+          
+          {/* Link para a seção Projetos */}
           <Link href="#projetos" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Projetos</Link>
+          {/* Itens de Projetos como sub-links no menu mobile */}
+          {projects.map((project, index) => (
+             <Link 
+                key={project.id} 
+                // CORREÇÃO AQUI: Formatando o href para /?slide=X#projetos
+                href={`/?slide=${index}#projetos`} 
+                className={`${styles.mobileLink} ${styles.mobileSubLink}`} // Classe de sub-link para indentação
+                onClick={() => setIsMenuOpen(false)}
+              >
+                — {project.title}
+              </Link>
+          ))}
+          
           <Link href="#contato" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Contato</Link>
         </div>
       </div>
