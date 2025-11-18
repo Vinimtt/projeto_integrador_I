@@ -1,14 +1,14 @@
 /* Navbar.module.css */
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, rgba(8,20,18,0.72), rgba(4,8,12,0.82));
+  backdrop-filter: blur(8px) saturate(120%);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.45);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   padding: 0.8rem 0;
-  border-bottom: 3px solid #2e7d32;
+  border-bottom: 3px solid var(--green-500);
 }
 
 .navbarContainer {
@@ -41,14 +41,15 @@
 .companyTitle {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #2e7d32;
+  color: var(--green-500);
   letter-spacing: 0.5px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.25);
 }
 
 .companySubtitle {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #666;
+  color: var(--gray-400);
   letter-spacing: 1px;
 }
 
@@ -64,12 +65,13 @@
   position: relative;
 }
 
+
 .navbarLink {
   text-decoration: none;
-  color: #333;
+  color: #e6f6ea;
   font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: color 0.25s ease, transform 0.25s ease;
   padding: 0.5rem 0;
   position: relative;
   text-transform: uppercase;
@@ -77,7 +79,8 @@
 }
 
 .navbarLink:hover {
-  color: #2e7d32;
+  color: var(--green-500);
+  transform: translateY(-2px);
 }
 
 .navbarLink::after {
@@ -87,8 +90,8 @@
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, #2e7d32, #4caf50);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--green-700), var(--green-500));
+  transition: width 0.25s ease;
 }
 
 .navbarLink:hover::after {
@@ -103,16 +106,35 @@
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  gap: 4px;
+  gap: 6px;
 }
 
 .mobileMenuButton span {
-  width: 25px;
+  width: 26px;
   height: 3px;
   background: #2e7d32;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, opacity 0.2s ease;
   border-radius: 2px;
+  display: block;
 }
+
+.mobileMenuButton:focus {
+  outline: 2px solid rgba(46,125,50,0.25);
+  outline-offset: 4px;
+}
+
+.mobileMenuButton.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.mobileMenuButton.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButton.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 
 .mobileMenu {
   display: none;
@@ -120,30 +142,36 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background: white;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  padding: 1rem 0;
+  background: rgba(6,10,12,0.96);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 0;
   flex-direction: column;
   gap: 0;
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 200ms cubic-bezier(.2,.9,.2,1), opacity 160ms ease;
+  opacity: 0;
 }
 
 .mobileMenu.active {
   display: flex;
+  transform: scaleY(1);
+  opacity: 1;
 }
 
 .mobileLink {
   padding: 1rem 2rem;
   text-decoration: none;
-  color: #333;
+  color: #e6f6ea;
   font-weight: 600;
-  border-bottom: 1px solid #f0f0f0;
-  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease;
   text-transform: uppercase;
 }
 
 .mobileLink:hover {
-  background: #f8f9fa;
-  color: #2e7d32;
+  background: rgba(46,125,50,0.06);
+  color: var(--green-500);
   padding-left: 2.5rem;
 }
 

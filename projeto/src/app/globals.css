@@ -12,8 +12,30 @@ html {
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #e6f6ea;
   overflow-x: hidden;
+}
+
+:root {
+  --green-900: #052a1f;
+  --green-700: #116233;
+  --green-500: #2e7d32;
+  --gray-400: #9aa0a6;
+  --bg-dark-1: #071018;
+  --bg-dark-2: #0a1416;
+  --glass-alpha: rgba(255,255,255,0.04);
+}
+
+/* Animated background with subtle moving tones (greens, preto e cinza) */
+body {
+  background-image:
+    radial-gradient(600px 400px at 10% 20%, rgba(46,125,50,0.08), transparent 12%),
+    radial-gradient(500px 350px at 90% 80%, rgba(17,98,51,0.06), transparent 12%),
+    linear-gradient(180deg, var(--bg-dark-1) 0%, var(--bg-dark-2) 60%);
+  background-size: 200% 200%, 200% 200%, 100% 100%;
+  background-repeat: no-repeat;
+  transition: background 0.4s ease, color 0.2s ease;
+  animation: bgShift 18s linear infinite;
 }
 
 a {
@@ -35,4 +57,28 @@ img {
 
 button:focus {
   outline: none;
+}
+
+@keyframes bgShift {
+  0% {
+    background-position: 0% 0%, 100% 100%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%, 0% 100%, 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 0% 0%;
+  }
+}
+
+/* Utility for subtle floating motion on elements that should feel 'tecnológicos' */
+.floaty {
+  transform: translateZ(0);
+  animation: floatyMove 6s ease-in-out infinite;
+}
+
+@keyframes floatyMove {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
 }

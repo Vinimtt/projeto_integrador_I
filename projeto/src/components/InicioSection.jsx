@@ -5,7 +5,10 @@ import styles from './InicioSection.module.css';
 const Hero = () => {
   return (
     <section className={styles.heroSection}>
-      {}
+      <div className={styles.bgOrbs} aria-hidden="true">
+        <div className={styles.sun} />
+        <div className={styles.orbSmall} />
+      </div>
       <div className={styles.topBar}></div>
       
       <div className={styles.heroContainer}>

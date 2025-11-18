@@ -1,16 +1,45 @@
 // components/Navbar.jsx
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import styles from './Navbar.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useRef, useState } from 'react';
+import styles from './Navbar.module.css';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+  const firstLinkRef = useRef(null);
+
+  useEffect(() => {
+    function handleKeyDown(e) {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    }
+
+    function handleClickOutside(e) {
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(e.target) && buttonRef.current && !buttonRef.current.contains(e.target)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen && firstLinkRef.current) {
+      firstLinkRef.current.focus();
+    }
+  }, [isMenuOpen]);
+
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} role="navigation" aria-label="Menu principal">
       <div className={styles.navbarContainer}>
         
         <Link href="/" className={styles.navbarBrand}>
@@ -49,18 +78,28 @@ const NavBar = () => {
         </ul>
 
         {/* Botão Menu Mobile */}
-        <button 
-          className={styles.mobileMenuButton}
+        <button
+          ref={buttonRef}
+          className={`${styles.mobileMenuButton} ${isMenuOpen ? styles.open : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
 
         {/* Menu Mobile */}
-        <div className={`${styles.mobileMenu} ${isMenuOpen ? styles.active : ''}`}>
-          <Link href="#inicio" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Início</Link>
+        <div
+          id="mobile-navigation"
+          ref={menuRef}
+          className={`${styles.mobileMenu} ${isMenuOpen ? styles.active : ''}`}
+          role="menu"
+          aria-hidden={!isMenuOpen}
+        >
+          <Link href="#inicio" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)} ref={firstLinkRef}>Início</Link>
           <Link href="#quem-somos" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Quem Somos</Link>
           <Link href="#servicos" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Serviços</Link>
           <Link href="#projetos" className={styles.mobileLink} onClick={() => setIsMenuOpen(false)}>Projetos</Link>
