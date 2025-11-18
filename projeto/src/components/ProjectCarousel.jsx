@@ -4,66 +4,73 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ProjectCarousel.module.css';
 import Image from 'next/image';
-import { useSearchParams } from 'next/navigation'; // Adicionado para ler a URL
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation'; // <-- Importado novamente para ler a URL
 
-// EXPORTAR A LISTA DE PROJETOS para ser utilizada no NavBar
+// A lista de projetos agora está dentro do componente para simplicidade,
+// mas vou exportá-la para manter a funcionalidade do código original (se necessário para o NavBar).
 export const projects = [
   {
     id: 1,
     title: "Projeto Residencial Moderno",
     description: "Design arquitetônico contemporâneo com integração total à natureza e soluções sustentáveis.",
     image: "/images/casa1.jpg",
-    category: "Residencial"
+    category: "Residencial",
+    path: "/moderno" // <-- Mantido
   },
   {
     id: 2,
     title: "Complexo Corporativo",
     description: "Edifício corporativo com tecnologia de ponta, espaços colaborativos e design inovador.",
     image: "/images/casa2.jpg",
-    category: "Corporativo"
+    category: "Corporativo",
+    path: "/corporativo" // <-- Mantido
   },
   {
     id: 3,
     title: "Centro Comercial & Lazer",
     description: "Complexo integrado com área comercial, entretenimento e praça de convivência urbana.",
     image: "/images/casa3.jpg",
-    category: "Comercial"
+    category: "Comercial",
+    path: "/comercial" // <-- Mantido
   },
   {
     id: 4,
     title: "Galpão de encomendas",
     description: "Galpão com autonomia energética",
-    image:  "/images/casa4.jpg",
-    category: "Comercial"
+    image: "/images/casa4.jpg",
+    category: "Comercial",
+    path: "/galpao" // <-- Mantido
   },
   {
     id: 5,
     title: "Casa residencial",
     description: "Casa simples",
-    image:  "/images/casa5.jpg",
-    category: "Residencial"
+    image: "/images/casa5.jpg",
+    category: "Residencial",
+    path: "/residencial" // <-- Mantido
   }
 ];
 
 const ProjectCarousel = () => {
-  const searchParams = useSearchParams();
-  
-  // Lógica para determinar o slide inicial a partir do parâmetro 'slide' na URL
+  const searchParams = useSearchParams(); // <-- Lógica 1: Adicionado da primeira versão
+
+  // Lógica 1: Função para determinar o slide inicial a partir do parâmetro 'slide' na URL
   const getInitialSlide = () => {
     const slideParam = searchParams.get('slide');
     if (slideParam) {
       const index = parseInt(slideParam, 10);
-      // Valida se o índice é um número válido e dentro do limite
+      // Valida se o índice é um número válido e dentro do limite (0 a projects.length - 1)
       if (index >= 0 && index < projects.length) {
         return index;
       }
     }
     return 0;
   };
-  
-  const [currentSlide, setCurrentSlide] = useState(getInitialSlide);
 
-  // Efeito para mudar o slide se o parâmetro da URL mudar
+  const [currentSlide, setCurrentSlide] = useState(getInitialSlide); // <-- Lógica 1: Inicializa com base na URL
+
+  // Lógica 1: Efeito para mudar o slide se o parâmetro da URL mudar (navegação externa)
   useEffect(() => {
     setCurrentSlide(getInitialSlide());
   }, [searchParams]);
@@ -80,13 +87,15 @@ const ProjectCarousel = () => {
     setCurrentSlide(index);
   };
 
+  // Lógica 2: Auto-avanço (mantido da segunda versão, mas melhorado para reiniciar a animação)
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
     }, 6000);
 
+    // Limpa o intervalo antes de recriá-lo ou quando o componente desmonta
     return () => clearInterval(interval);
-  }, [currentSlide]);
+  }, [currentSlide]); // Dependência em currentSlide para reiniciar o timer a cada mudança
 
   return (
     <section id="projetos" className={styles.carouselSection}>
@@ -121,9 +130,14 @@ const ProjectCarousel = () => {
                         <p className={styles.projectDescription}>
                           {project.description}
                         </p>
-                        <button className={styles.projectButton}>
+                        
+                        {/* Lógica 2: Utilização do componente Link com o path */}
+                        <Link
+                            href={project.path}
+                            className={styles.projectButton}
+                        >
                           Ver Projeto Completo
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -156,12 +170,15 @@ const ProjectCarousel = () => {
           </div>
 
           
+          {/* BARRA DE PROGRESSO COM A CHAVE PARA REINICIAR A ANIMAÇÃO */}
           <div className={styles.progressBar}>
             <div 
+              key={currentSlide} // <-- Reinicia a animação CSS em cada slide
               className={styles.progressFill}
               style={{ 
-                width: `${((currentSlide + 1) / projects.length) * 100}%`,
-                transition: currentSlide === projects.length - 1 ? 'width 0s' : 'width 6s linear'
+                animationDuration: '6s', // Define a duração no CSS ou aqui se necessário
+                // O width deve ser '100%' para a animação começar do zero e preencher
+                width: '100%' 
               }}
             />
           </div>
