@@ -9,13 +9,6 @@ import ProjectCarousel from '../components/ProjectCarousel';
 import ContatoSection from '../components/ContatoSection';
 import CuriosidadesSection from '../components/CuriosidadesSection';
 
-import { connection } from 'next/server'
- 
-export default async function Page() {
-  await connection()
-  return <div>...</div>
-}
-
 export default function Home() {
   return (
     <>
