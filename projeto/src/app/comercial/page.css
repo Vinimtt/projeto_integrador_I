@@ -1,69 +1,294 @@
-/* page.css */
 
 .project-container {
-  padding: 40px;
-  max-width: 900px;
+  padding: 50px 20px;
+  max-width: 1100px;
   margin: 0 auto;
-  animation: fadeIn 0.6s ease-in-out;
+  animation: fadeIn 0.8s ease;
+  color: var(--text-primary);
 }
 
 .project-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  font-weight: bold;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
   text-align: center;
+  color: var(--green-500);
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(46, 125, 50, 0.4);
 }
 
 .project-image-wrapper {
   width: 100%;
-  height: 400px;
+  height: 450px;
+  border-radius: 16px;
   overflow: hidden;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  position: relative;
+  background: var(--glass-alpha);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 18px rgba(0,0,0,0.5);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: box-shadow 0.5s ease, border-color 0.5s ease;
+}
+
+.project-image-wrapper:hover {
+  box-shadow: 0 0 25px rgba(46, 125, 50, 0.6);
+  border-color: rgba(46, 125, 50, 0.5);
 }
 
 .project-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 8s ease;
+}
+
+.project-image-wrapper:hover .project-image {
+  transform: scale(1.08);
 }
 
 .project-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  text-align: justify;
+  margin-top: 25px;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: left;
+  color: var(--text-secondary);
 }
 
 .info-box {
-  background: #f6f6f6;
-  padding: 20px;
-  border-radius: 10px;
-  border-left: 5px solid #0070f3;
+  margin-top: 35px;
+  background: var(--glass-bg-soft);
+  padding: 25px 30px;
+  border-radius: 14px;
+  border-left: 6px solid var(--green-500);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 16px rgba(255,255,255,0.04);
 }
 
 .info-box h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--green-500);
+  text-shadow: 0 0 6px rgba(46,125,50,0.4);
 }
 
 .info-box ul {
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
 }
 
 .info-box li {
-  margin-bottom: 6px;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  padding-left: 24px;
+  position: relative;
 }
 
-/* Animação suave */
+.info-box li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--green-500);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 6px;
+  box-shadow: 0 0 6px rgba(46,125,50,0.6);
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------------------
+   2. SEÇÃO DE CONTATO (full-width)
+   ------------------------------------------- */
+
+.contato-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--green-500);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 1.1rem;
+  color: #6a6a6a;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* GRID CORRIGIDO (Faltava display: flex!!) */
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.contact-card {
+  flex: 1;
+  min-width: 250px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(46,125,50,0.2);
+}
+
+.icon-wrapper {
+  background: var(--green-500);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper i,
+.icon-wrapper svg {
+  color: white;
+  font-size: 30px;
+}
+
+.contact-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.contact-card .info,
+.contact-card .handle {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.contact-card button,
+.contact-card a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.button-green {
+  background-color: var(--green-500);
+  color: white;
+}
+
+.button-green:hover {
+  background-color: #388e3c;
+  transform: translateY(-1px);
+}
+
+/* -------------------------------------------
+   3. RESPONSIVIDADE
+   ------------------------------------------- */
+
+@media (max-width: 850px) {
+  .contact-grid {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .contact-card {
+    min-width: 100%;
   }
+}
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2.2rem;
+  }
+
+  .project-image-wrapper {
+    height: 350px;
+  }
+
+  .project-description {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+    padding: 30px 15px;
+  }
+
+  .project-title,
+  .contact-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .project-image-wrapper {
+    height: 250px;
+  }
+
+  .project-description {
+    margin-top: 20px;
+  }
+
+  .info-box {
+    padding: 20px;
+  }
+
+  .contact-section {
+    padding: 40px 15px;
+  }
+}
+.back-button-wrapper {
+  width: 100%;
+  padding: 20px 0 0 0;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 16px;
+}
+
+.back-button {
+  background: var(--green-700);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--green-500);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.back-button:hover {
+  background: var(--green-500);
+  transform: translateX(-4px);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.3);
+}
+
+.back-button:active {
+  transform: translateX(-2px) scale(0.98);
 }
