@@ -5,7 +5,8 @@
 }
 
 .bgLight {
-  background: #f8f9fa;
+  background: rgba(255,255,255,0.02) !important;
+  color: #e6f6ea;
 }
 
 .container {
@@ -41,14 +42,14 @@
 
 .aboutText h3 {
   font-size: 1.8rem;
-  color: #333;
+  color: rgba(230,246,234,0.98);
   margin-bottom: 1.5rem;
 }
 
 .aboutText p {
   font-size: 1.1rem;
   line-height: 1.7;
-  color: #666;
+  color: rgba(230,246,234,0.86);
   margin-bottom: 2rem;
 }
 
@@ -60,14 +61,14 @@
 }
 
 .mvItem {
-  background: white;
+  background: rgba(255,255,255,0.02);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
 
 .mvItem h4 {
-  color: #2e7d32;
+  color: var(--green-500);
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
@@ -79,7 +80,7 @@
 
 .mvItem li {
   padding: 0.3rem 0;
-  color: #666;
+  color: rgba(230,246,234,0.78);
 }
 
 .mvItem li:before {

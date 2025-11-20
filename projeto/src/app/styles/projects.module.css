@@ -154,11 +154,11 @@
 .contact-card {
   flex: 1;
   min-width: 250px;
-  background-color: white;
+  background-color: rgba(255,255,255,0.02);
   border-radius: 12px;
   padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -186,14 +186,14 @@
 
 .contact-card h3 {
   font-size: 1.4rem;
-  color: #333;
+  color: rgba(230,246,234,0.98);
   margin-bottom: 5px;
 }
 
 .contact-card .info,
 .contact-card .handle {
   font-size: 0.95rem;
-  color: #777;
+  color: rgba(230,246,234,0.78);
   margin-bottom: 15px;
 }
 

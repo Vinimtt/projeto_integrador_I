@@ -7,7 +7,6 @@ import QuemSomosSection from '../components/QuemSomosSection';
 import ServicosSection from '../components/ServicosSection';
 import ProjectCarousel from '../components/ProjectCarousel';
 import ContatoSection from '../components/ContatoSection';
-import CuriosidadesSection from '../components/CuriosidadesSection';
 
 export default function Home() {
   return (
@@ -27,7 +26,6 @@ export default function Home() {
           <ProjectCarousel />
         </Suspense>
 
-        <CuriosidadesSection />
         <ContatoSection />
       </main>
     </>

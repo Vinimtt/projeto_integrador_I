@@ -82,3 +82,24 @@ button:focus {
   50% { transform: translateY(-6px); }
   100% { transform: translateY(0px); }
 }
+
+/* Force page sections to show the dark animated background and use light text
+   This prevents individual page styles from switching to a light theme. */
+main,
+.section,
+.project-container,
+.project-page,
+.page-wrapper,
+.content-wrapper,
+.contact-section {
+  background: transparent !important;
+  color: #e6f6ea !important;
+}
+
+.section h2,
+.section h3,
+.section p,
+.section span,
+.section li {
+  color: rgba(230,246,234,0.95) !important;
+}
