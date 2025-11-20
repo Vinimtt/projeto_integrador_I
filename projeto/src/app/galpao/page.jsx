@@ -1,32 +1,32 @@
 // page.jsx
 import React from "react";
 import Link from "next/link";
-import "./page.css";
+import styles from "../styles/projects.module.css";
 import ContatoSection from "../../components/ContatoSection";
 
 export default function Page() {
   return (
     <>
       {/* BOTÃO DE VOLTAR */}
-      <div className="back-button-wrapper">
-        <Link href="/" className="back-button">
+      <div className={styles["black-button-wrapper"]}>
+        <Link href="/" className={styles["black-button"]}>
           ⬅ Voltar ao site
         </Link>
       </div>
 
       {/* CONTAINER DO PROJETO */}
-      <div className="project-container">
-        <h1 className="project-title">Centro Comercial & Lazer</h1>
+      <div className={styles["black-button"]}>
+        <h1 className={styles["project-title"]}>Centro Comercial & Lazer</h1>
 
-        <div className="project-image-wrapper">
+        <div className={styles["project-image-wrapper"]}>
           <img
-            src="/images/exemplo.jpg"
+            src="/images/casa3.jpg"
             alt="Imagem do projeto"
             className="project-image"
           />
         </div>
 
-        <p className="project-description">
+        <p className={styles["project-description"]}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque volutpat, mauris at dictum dictum, justo lorem facilisis nisl, vel maximus lectus risus vel ligula. Donec id semper lorem. Vivamus non aliquet orci.
           <br /><br />
           Suspendisse potenti. Vestibulum tincidunt sapien sit amet ligula facilisis placerat. Duis blandit, libero non rhoncus blandit, tellus lorem aliquam risus, eget elementum odio lorem a augue.
