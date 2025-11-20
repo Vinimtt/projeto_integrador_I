@@ -31,7 +31,7 @@ const Hero = () => {
         {}
         <div className={styles.imageWrapper}>
           <Image
-            src="/images/casa1.jpg" 
+            src="/images/casa3.jpg" 
             alt="Painéis solares em um campo"
             width={600}
             height={450}

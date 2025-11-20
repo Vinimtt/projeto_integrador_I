@@ -43,7 +43,7 @@ const ContatoSection = () => {
               </div>
               <h3>WhatsApp</h3>
               <p>Converse conosco agora</p>
-              <p className={styles.phoneText} aria-label="Número de WhatsApp">(81) 99113-7039</p>
+              <p className={styles.phoneText} aria-label="Número de WhatsApp"></p>
               <button className={styles.contactButton}>
                 Iniciar Conversa
               </button>
@@ -80,7 +80,7 @@ const ContatoSection = () => {
           </div>
 
           <div className={styles.mapNote}>
-            <p> sustentabilidade que gera resultado </p>
+            <p> Sustentabilidade que gera resultado! </p>
           </div>
         </div>
       </div>

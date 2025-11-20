@@ -10,94 +10,52 @@ const ServicosSection = () => {
           <h2>Nossos Serviços</h2>
           <div className={styles.divider}></div>
           <p className={styles.sectionSubtitle}>
-            Soluções completas em engenharia e arquitetura
+            Soluções completas em engenharia
           </p>
         </div>
         
-        <div className={styles.servicesGrid}>
+<div className={styles.servicesGrid}>
           <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>🏢</div>
-            <h3>Projetos Arquitetônicos</h3>
+            <div className={styles.serviceIcon}>☀️</div>
+            <h3>Energia Solar</h3>
             <p>
-              Desenvolvimento de projetos residenciais, comerciais e industriais 
-              com foco em funcionalidade, estética e sustentabilidade.
+              Soluções completas em energia fotovoltaica para residências e empresas, 
+              focadas na máxima eficiência energética e retorno financeiro.
             </p>
             <ul>
-              <li>Plantas e memorial descritivo</li>
-              <li>Renderização 3D</li>
-              <li>Adequação às normas técnicas</li>
+              <li>Dimensionamento e projetos fotovoltaicos</li>
+              <li>Instalação e homologação na concessionária</li>
+              <li>Monitoramento de geração e manutenção</li>
             </ul>
           </div>
 
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>⚡</div>
-            <h3>Instalações Elétricas</h3>
-            <p>
-              Projetos e execução de sistemas elétricos prediais e industriais, 
-              garantindo segurança e eficiência energética.
-            </p>
-            <ul>
-              <li>Diagramas elétricos</li>
-              <li>SPDA (Para-raios)</li>
-              <li>Automação predial</li>
-            </ul>
-          </div>
+<div className={styles.serviceCard}>
+          <div className={styles.serviceIcon}>⚡</div>
+          <h3>Instalações Elétricas</h3>
+          <p>
+            Execução especializada em serviços elétricos de baixa e média tensão, 
+            com foco na segurança operacional e infraestrutura industrial.
+          </p>
+          <ul>
+            <li>Redes de baixa e média tensão</li>
+            <li>Montagem de subestações e painéis</li>
+            <li>Manutenção elétrica industrial</li>
+          </ul>
+        </div>
 
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>💧</div>
-            <h3>Hidrossanitários</h3>
-            <p>
-              Sistemas completos de água fria, água quente, esgoto e drenagem, 
-              seguindo as mais rigorosas normas técnicas.
-            </p>
-            <ul>
-              <li>Projeto hidráulico</li>
-              <li>Esgoto e drenagem</li>
-              <li>Águas pluviais</li>
-            </ul>
-          </div>
-
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>🌡️</div>
-            <h3>Climatização</h3>
-            <p>
-              Projetos de sistemas de ar condicionado e ventilação para conforto 
-              térmico e qualidade do ar interior.
-            </p>
-            <ul>
-              <li>Ar condicionado central</li>
-              <li>Ventilação industrial</li>
-              <li>Controle de umidade</li>
-            </ul>
-          </div>
-
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>🔧</div>
-            <h3>Estrutural</h3>
-            <p>
-              Cálculo e dimensionamento de estruturas em concreto, aço e madeira, 
-              garantindo segurança e estabilidade.
-            </p>
-            <ul>
-              <li>Laudos técnicos</li>
-              <li>Reformas estruturais</li>
-              <li>Fundações e contenções</li>
-            </ul>
-          </div>
-
-          <div className={styles.serviceCard}>
-            <div className={styles.serviceIcon}>📊</div>
-            <h3>Consultoria</h3>
-            <p>
-              Assessoria técnica especializada para gestão de projetos, 
-              fiscalização de obras e regularização documental.
-            </p>
-            <ul>
-              <li>Gestão de projetos</li>
-              <li>Fiscalização de obras</li>
-              <li>Regularização</li>
-            </ul>
-          </div>
+        <div className={styles.serviceCard}>
+          <div className={styles.serviceIcon}>📊</div>
+          <h3>Engenharia e Consultoria</h3>
+          <p>
+            Suporte técnico completo para gestão de obras de energia e 
+            regularização de ativos, garantindo conformidade com as normas.
+          </p>
+          <ul>
+            <li>Fiscalização e gestão de obras</li>
+            <li>Laudos técnicos e comissionamento</li>
+            <li>Projetos executivos e As-Built</li>
+          </ul>
+        </div>
         </div>
       </div>
     </section>

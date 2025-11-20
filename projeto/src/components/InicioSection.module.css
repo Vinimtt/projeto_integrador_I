@@ -23,7 +23,7 @@
   top: 6%;
   width: 420px;
   height: 420px;
-  margin-left: -210px; /* center by default */
+  margin-left: -210px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, rgba(255,220,140,0.98), rgba(255,170,60,0.08) 30%, rgba(46,125,50,0.03) 55%, transparent 68%);
   filter: blur(22px) saturate(130%);
