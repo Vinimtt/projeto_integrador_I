@@ -1,4 +1,6 @@
-
+/* -------------------------------------------
+   1. CONTAINER E TÍTULO DO PROJETO
+   ------------------------------------------- */
 
 .project-container {
   padding: 50px 20px;
@@ -18,9 +20,16 @@
   text-shadow: 0 0 8px rgba(46, 125, 50, 0.4);
 }
 
+/* -------------------------------------------
+   2. IMAGEM (Ajustada para formatos Panorâmicos)
+   ------------------------------------------- */
+
 .project-image-wrapper {
   width: 100%;
-  height: 450px;
+  /* Altura automática para respeitar a proporção da imagem original */
+  height: auto;
+  aspect-ratio: unset;
+  
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -38,14 +47,20 @@
 
 .project-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  /* Altura automática acompanha o wrapper */
+  height: auto;
+  display: block; /* Remove espaços brancos indesejados */
   transition: transform 8s ease;
 }
 
 .project-image-wrapper:hover .project-image {
-  transform: scale(1.08);
+  /* Zoom suave, reduzido para não cortar muito as bordas */
+  transform: scale(1.03);
 }
+
+/* -------------------------------------------
+   3. DESCRIÇÃO E INFO BOX
+   ------------------------------------------- */
 
 .project-description {
   margin-top: 25px;
@@ -102,7 +117,7 @@
 }
 
 /* -------------------------------------------
-   2. SEÇÃO DE CONTATO (full-width)
+   4. SEÇÃO DE CONTATO
    ------------------------------------------- */
 
 .contato-section {
@@ -111,7 +126,6 @@
   padding: 40px 20px;
   margin: 0;
 }
-
 
 .contact-section h2 {
   font-size: 2.5rem;
@@ -128,7 +142,6 @@
   margin-bottom: 40px;
 }
 
-/* GRID CORRIGIDO (Faltava display: flex!!) */
 .contact-grid {
   display: flex;
   justify-content: center;
@@ -207,62 +220,9 @@
 }
 
 /* -------------------------------------------
-   3. RESPONSIVIDADE
+   5. BOTÃO VOLTAR
    ------------------------------------------- */
 
-@media (max-width: 850px) {
-  .contact-grid {
-    flex-direction: column;
-    gap: 15px;
-    padding: 0;
-  }
-
-  .contact-card {
-    min-width: 100%;
-  }
-}
-
-@media (max-width: 768px) {
-  .project-title {
-    font-size: 2.2rem;
-  }
-
-  .project-image-wrapper {
-    height: 350px;
-  }
-
-  .project-description {
-    font-size: 1.05rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .project-container {
-    padding: 30px 15px;
-  }
-
-  .project-title,
-  .contact-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-  }
-
-  .project-image-wrapper {
-    height: 250px;
-  }
-
-  .project-description {
-    margin-top: 20px;
-  }
-
-  .info-box {
-    padding: 20px;
-  }
-
-  .contact-section {
-    padding: 40px 15px;
-  }
-}
 .back-button-wrapper {
   width: 100%;
   padding: 20px 0 0 0;
@@ -292,4 +252,58 @@
 
 .back-button:active {
   transform: translateX(-2px) scale(0.98);
+}
+
+/* -------------------------------------------
+   6. RESPONSIVIDADE
+   ------------------------------------------- */
+
+@media (max-width: 850px) {
+  .contact-grid {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .contact-card {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 2.2rem;
+  }
+  
+  /* Alturas fixas removidas para permitir ajuste automático da imagem */
+  
+  .project-description {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-container {
+    padding: 30px 15px;
+  }
+
+  .project-title,
+  .contact-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Alturas fixas removidas para permitir ajuste automático da imagem */
+
+  .project-description {
+    margin-top: 20px;
+  }
+
+  .info-box {
+    padding: 20px;
+  }
+
+  .contact-section {
+    padding: 40px 15px;
+  }
 }
