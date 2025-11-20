@@ -15,12 +15,12 @@ export default function Page() {
       </div>
 
       {/* CONTAINER DO PROJETO */}
-      <div className={styles["black-button"]}>
+      <div className={styles["project-container"]}>
         <h1 className={styles["project-title"]}>Centro Comercial & Lazer</h1>
 
         <div className={styles["project-image-wrapper"]}>
           <img
-            src="/images/casa3.jpg"
+            src="/images/casa4.jpg"
             alt="Imagem do projeto"
             className="project-image"
           />

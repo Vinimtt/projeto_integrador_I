@@ -20,7 +20,7 @@ export default function Page() {
 
         <div className={styles["project-image-wrapper"]}>
           <img
-            src="/images/casa5.jpg"
+            src="/images/campo1.jpg"
             alt="Imagem do projeto"
             className="project-image"
           />
