@@ -16,7 +16,7 @@ export default function Page() {
 
       {/* CONTAINER DO PROJETO */}
       <div className={styles["project-container"]}>
-        <h1 className={styles["project-title"]}>Centro Comercial & Lazer</h1>
+        <h1 className={styles["project-title"]}>Centro Comercial</h1>
 
         <div className={styles["project-image-wrapper"]}>
           <img
